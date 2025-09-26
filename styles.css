@@ -1,0 +1,24 @@
+:root{
+  --bg:#0f0f17; --card:#1f1f2b; --accent:#8A2BE2; --text:#eaeaea;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:Inter,Segoe UI,Arial; background:linear-gradient(180deg,#0b0b10 0%, #12121a 100%);
+  color:var(--text); min-height:100vh; display:flex; flex-direction:column;
+}
+.header{padding:36px;text-align:center}
+.header h1{margin:0;font-size:28px}
+.grid{
+  display:grid; gap:24px; padding:24px; max-width:1100px; margin:0 auto; width:100%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:14px; padding:18px; text-align:center; cursor:pointer; transition:transform .15s, box-shadow .15s;
+  border:1px solid rgba(255,255,255,0.04);
+}
+.card:hover{ transform:translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.6)}
+.fav{width:72px;height:72px; margin:8px auto 12px; display:block}
+.title{font-weight:700; margin:6px 0; font-size:15px}
+.url{color:#bdbdbd; font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.footer{padding:24px;text-align:center;color:#999;margin-top:auto}
