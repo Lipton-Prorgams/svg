@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Просмотр JSON</title>
+    <link rel="stylesheet" href="style (1).css">
+</head>
+<body>
+    <div class="container">
+        <h1>Содержимое JSON файла</h1>
+        <nav>
+            <ul>
+                <li><a href="index (1).html">Главная</a></li>
+                <li><a href="json.html">Просмотр JSON</a></li>
+                <li><a href="download (1).html">Скачать файл</a></li>
+            </ul>
+        </nav>
+        <div id="json-content">
+            <p>Загрузка JSON данных...</p>
+        </div>
+        <button onclick="loadJSON()">Обновить данные</button>
+    </div>
+
+    <script>
+        function loadJSON() {
+            fetch('data.json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('json-content').innerHTML = 
+                        '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                })
+                .catch(error => {
+                    document.getElementById('json-content').innerHTML = 
+                        '<p style="color: red;">Ошибка загрузки JSON: ' + error + '</p>';
+                });
+        }
+
+        // Загружаем JSON при открытии страницы
+        document.addEventListener('DOMContentLoaded', loadJSON);
+    </script>
+</body>
+</html>
