@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скачать файл</title>
+    <script>
+        // Автоматическое скачивание при загрузке страницы
+        window.onload = function() {
+            // Создаем временную ссылку для скачивания
+            const link = document.createElement('a');
+            link.href = '/download/NeonByteInstaller.exe'; // Укажите правильный путь к файлу
+            link.download = 'NeonByteInstaller.exe'; // Имя файла при скачивании
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Опционально: перенаправление обратно на главную страницу
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 1000);
+        };
+    </script>
+</head>
+<body>
+    <div style="text-align: center; padding: 50px;">
+        <h2>Скачивание началось...</h2>
+        <p>Если скачивание не началось автоматически, <a href="/download/NeonByteInstaller.exe" download>нажмите сюда</a>.</p>
+    </div>
+</body>
+</html>
